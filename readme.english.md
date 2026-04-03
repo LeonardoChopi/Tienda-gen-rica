@@ -1,6 +1,6 @@
 🇬🇧 [English](readme.english.md) · 🇪🇸 [Español](README.md)
 
-# 🛍️ Piamonte — Artisanal Store
+# 🛍️ Tienda Generica
 
 Welcome to the project. This guide explains everything you need to know to use, modify and publish your store, even if you have never touched code before.
 
