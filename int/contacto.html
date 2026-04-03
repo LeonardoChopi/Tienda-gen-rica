@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        .contacto-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 3rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .contacto-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--texto);
+            line-height: 1.2;
+        }
+
+        .contacto-info p {
+            font-size: 0.95rem;
+            color: var(--texto-suave);
+            line-height: 1.65;
+        }
+
+        .contacto-dato {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+        }
+
+        .contacto-dato .icono {
+            width: 36px;
+            height: 36px;
+            background: var(--crema-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .contacto-form {
+            background: #fffdf4;
+            border: 1px solid var(--crema-dark);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            box-shadow: 0 2px 12px var(--sombra);
+        }
+
+        .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-grupo label {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--texto-suave);
+            text-transform: uppercase;
+        }
+
+        .form-grupo input,
+        .form-grupo select,
+        .form-grupo textarea {
+            padding: 0.65rem 0.9rem;
+            border: 1.5px solid var(--crema-dark);
+            border-radius: 8px;
+            background: var(--crema);
+            font-size: 0.9rem;
+        }
+
+        .form-grupo textarea {
+            min-height: 120px;
+        }
+
+        .form-fila {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: var(--marron);
+            color: var(--crema);
+            border: none;
+            border-radius: 999px;
+            cursor: pointer;
+            align-self: flex-end;
+        }
+
+        @media (max-width: 700px) {
+            .contacto-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-fila {
+                grid-template-columns: 1fr;
+            }
+
+            .form-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="../info/logo.png" alt="Logo">
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="../index.html">Inicio</a></li>
+            <li><a href="productos.html">Productos</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="contacto-wrapper">
+
+        <!-- Info -->
+        <div class="contacto-info">
+            <h1>¿Hablamos?</h1>
+            <p>Podés escribirnos para consultar o hacer pedidos.</p>
+
+            <div class="contacto-dato"><span class="icono">📍</span>Montevideo, Uruguay</div>
+            <div class="contacto-dato"><span class="icono">📸</span>@piamonte_uy</div>
+            <div class="contacto-dato"><span class="icono">✉️</span>contacto@piamonte.uy</div>
+            <div class="contacto-dato"><span class="icono">🕐</span>Respondemos en menos de 24 hs</div>
+        </div>
+
+        <!-- FORMULARIO -->
+        <form class="contacto-form" action="https://formsubmit.co/TU_CORREO@gmail.com" method="POST">
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="gracias.html">
+
+            <div class="form-fila">
+                <div class="form-grupo">
+                    <label>Nombre</label>
+                    <input type="text" name="nombre" required>
+                </div>
+
+                <div class="form-grupo">
+                    <label>Apellido</label>
+                    <input type="text" name="apellido" required>
+                </div>
+            </div>
+
+            <div class="form-grupo">
+                <label>Email</label>
+                <input type="email" name="email" required>
+            </div>
+
+            <div class="form-grupo">
+                <label>Teléfono</label>
+                <input type="tel" name="telefono">
+            </div>
+
+            <div class="form-grupo">
+                <label>Motivo</label>
+                <select name="motivo" required>
+                    <option value="">Seleccioná una opción</option>
+                    <option>Consulta</option>
+                    <option>Pedido</option>
+                    <option>Mayorista</option>
+                </select>
+            </div>
+
+            <div class="form-grupo">
+                <label>Mensaje</label>
+                <textarea name="mensaje" required></textarea>
+            </div>
+
+            <button type="submit" class="form-btn">Enviar mensaje</button>
+        </form>
+
+    </div>
+</main>
+
+</body>
+</html>

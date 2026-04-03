@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- 1. Carrucel primero (define iniciarCarruseles global) -->
+    <script src="script/carrucel.js" defer></script>
+    <!-- 2. Contactar  -->
+    <script src="script/contactar.js" defer></script>
+    <!-- 3. Cargador de productos (usa iniciarCarruseles al final) -->
+    <script src="script/cargarprod.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <div class="logo">
+                <img src="info/logo.png" alt="(Logo de la tienda)">
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="int/productos.html">Productos</a></li>
+                <li><a href="int/contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sobrenosotros">
+            <h1>Bienvenidos a Nuestra Tienda Genérica</h1>
+            <p>En nuestra tienda encontrarás una selección de productos artesanales, cuidadosamente elaborados para ofrecerte calidad y autenticidad. Desde jabones naturales hasta velas aromáticas, cada artículo es creado con dedicación y pasión por el detalle. Explora nuestra colección y descubre el encanto de lo hecho a mano.</p>
+        </div>
+        <div class="productos-grid" id="productos-grid">
+            <!-- Las cards se generan dinámicamente desde cargarprod.js -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 · <a href="int/licencia.html">Acuedo de licencia</a></p>
+    </footer>
+</body>
+</html>

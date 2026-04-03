@@ -1,0 +1,447 @@
+/* ─── Variables ─────────────────────────────────── */
+:root {
+    --crema:      #fff5d8;
+    --crema-dark: #f0e3b0;
+    --marron:     #6b4c2a;
+    --marron-light: #9a7248;
+    --texto:      #3a2a1a;
+    --texto-suave:#7a6a5a;
+    --sombra:     rgba(80, 50, 20, 0.10);
+    --radio:      14px;
+}
+
+/* ─── Reset ─────────────────────────────────────── */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--crema);
+    font-family: 'DM Sans', sans-serif;
+    color: var(--texto);
+    min-height: 100vh;
+}
+
+/* ─── Header ─────────────────────────────────────── */
+header {
+    background-color: var(--crema);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--crema-dark);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo img {
+    height: 70px;
+}
+
+.buscardor input[type="text"] {
+    padding: 0.5rem 1rem;
+    border: 1.5px solid var(--crema-dark);
+    border-radius: 999px;
+    background: white;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--texto);
+    outline: none;
+    transition: border-color 0.2s;
+    width: 220px;
+}
+
+.buscardor input[type="text"]:focus {
+    border-color: var(--marron-light);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+}
+
+nav ul li a:hover {
+    color: var(--marron);
+}
+
+/* ─── Main / Grid ────────────────────────────────── */
+main {
+    padding: 2.5rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    place-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* ─── Card ───────────────────────────────────────── */
+.card {
+    background: #fffdf4;
+    border-radius: var(--radio);
+    box-shadow: 0 2px 12px var(--sombra);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    border: 1px solid var(--crema-dark);
+    width: 100%;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 28px rgba(80, 50, 20, 0.15);
+}
+
+main .sobrenosotros {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+    color: var(--texto-suave);
+}
+
+/* ─── Carrusel ───────────────────────────────────── */
+.card-imagenes {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background: var(--crema-dark);
+}
+
+.carrusel {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carrusel img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.carrusel img.activa {
+    opacity: 1;
+}
+
+/* Botones prev/next */
+.carrusel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 245, 216, 0.85);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    color: var(--marron);
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    transition: background 0.2s;
+}
+
+.carrusel-btn:hover {
+    background: rgba(255, 245, 216, 1);
+}
+
+.carrusel-btn.prev { left: 8px; }
+.carrusel-btn.next { right: 8px; }
+
+/* Dots */
+.carrusel-dots {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    z-index: 10;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgba(107, 76, 42, 0.3);
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.dot.activo {
+    background: var(--marron);
+}
+
+/* ─── Info ───────────────────────────────────────── */
+.card-info {
+    padding: 1.1rem 1.2rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+}
+
+.card-nombre {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--texto);
+    line-height: 1.3;
+}
+
+.card-descripcion {
+    font-size: 0.875rem;
+    color: var(--texto-suave);
+    line-height: 1.55;
+    flex: 1;
+}
+
+/* ─── Footer de la card ──────────────────────────── */
+.card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0.8rem;
+    gap: 0.5rem;
+}
+
+.card-precio {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--marron);
+}
+
+.card-btn {
+    display: inline-block;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: var(--marron);
+    color: var(--crema);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+    transition: background 0.2s, transform 0.15s;
+    margin-left: auto;
+}
+
+.card-btn:hover {
+    background: var(--marron-light);
+    transform: scale(1.03);
+}
+
+/* ─── Footer ─────────────────────────────────────── */
+footer {
+    padding: 2rem;
+    text-align: center;
+    color: var(--texto-suave);
+    font-size: 0.85rem;
+    border-top: 1px solid var(--crema-dark);
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--marron);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+/* ─── Página Productos ───────────────────────────── */
+.productos-header {
+    margin-bottom: 2rem;
+}
+
+.pagina-titulo {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--texto);
+}
+
+.sin-resultados {
+    color: var(--texto-suave);
+    font-size: 0.95rem;
+    grid-column: 1 / -1;
+    padding: 2rem 0;
+}
+
+/**/
+
+.contacto-wrapper {
+display: grid;
+            grid-template-columns: 1fr 1.6fr;
+            gap: 3rem;
+            max-width: 900px;
+            width: 100%;
+            margin: 0 auto;
+}
+
+.contacto-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+}
+
+.contacto-info h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--texto);
+            line-height: 1.2;
+}
+
+.contacto-info p {
+            font-size: 0.95rem;
+            color: var(--texto-suave);
+            line-height: 1.65;
+}
+
+.contacto-dato {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--texto-suave);
+}
+
+.contacto-dato .icono {
+            width: 36px;
+            height: 36px;
+            background: var(--crema-dark);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        /* ─── Formulario ─── */
+        .contacto-form {
+            background: #fffdf4;
+            border: 1px solid var(--crema-dark);
+            border-radius: 16px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            box-shadow: 0 2px 12px var(--sombra);
+        }
+
+        .form-grupo {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-grupo label {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--texto-suave);
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .form-grupo input,
+        .form-grupo select,
+        .form-grupo textarea {
+            padding: 0.65rem 0.9rem;
+            border: 1.5px solid var(--crema-dark);
+            border-radius: 8px;
+            background: var(--crema);
+            font-family: inherit;
+            font-size: 0.9rem;
+            color: var(--texto);
+            outline: none;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            resize: none;
+        }
+
+        .form-grupo input:focus,
+        .form-grupo select:focus,
+        .form-grupo textarea:focus {
+            border-color: var(--marron-light);
+            box-shadow: 0 0 0 3px rgba(107, 76, 42, 0.08);
+        }
+
+        .form-grupo textarea {
+            min-height: 120px;
+        }
+
+        .form-fila {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-btn {
+            padding: 0.75rem 2rem;
+            background: var(--marron);
+            color: var(--crema);
+            border: none;
+            border-radius: 999px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            letter-spacing: 0.03em;
+            transition: background 0.2s, transform 0.15s;
+            align-self: flex-end;
+        }
+
+        .form-btn:hover {
+            background: var(--marron-light);
+            transform: scale(1.03);
+}
+
+
+
+
+
+        /* ─── Responsive ─── */
+        @media (max-width: 700px) {
+            .contacto-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .form-fila {
+                grid-template-columns: 1fr;
+            }
+
+            .form-btn {
+                width: 100%;
+            }
+        }

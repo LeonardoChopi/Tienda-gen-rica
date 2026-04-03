@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Orden importa: carrucel antes que los cargadores -->
+    <script src="../script/carrucel.js" defer></script>
+    <script src="../script/contactar.js" defer" defer></script>
+    <script src="../script/cargarprodall.js" defer></script>
+    <script src="../script/buscar.js" defer></script>
+</head>
+<body>
+    <header>
+        <a href="../index.html">
+            <div class="logo">
+                <img src="../info/logo.png" alt="(Logo de la tienda)">
+            </div>
+        </a>
+        <div class="buscardor">
+            <input type="text" id="input-buscar" placeholder="Buscar productos...">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="productos.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="productos-header">
+            <h1 class="pagina-titulo">Todos los productos</h1>
+        </div>
+
+        <div class="productos-grid" id="productos-grid">
+            <!-- Se carga dinámicamente -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 · Hecho con amor artesanal</p>
+    </footer>
+</body>
+</html>
