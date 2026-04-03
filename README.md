@@ -1,6 +1,6 @@
 🇬🇧 [English](readme.english.md) · 🇪🇸 [Español](README.md)
 
-# 🛍️ Piamonte — Tienda Artesanal
+# 🛍️ Tienda Generica
 
 Bienvenido al proyecto. Esta guía te explica todo lo que necesitás saber para usar, modificar y publicar tu tienda, aunque nunca hayas tocado código antes.
 
