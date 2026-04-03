@@ -1,4 +1,4 @@
-🇬🇧 [English](README.md) · 🇪🇸 [Español](README.es.md)
+🇬🇧 [English](readme.english.md) · 🇪🇸 [Español](README.md)
 
 # 🛍️ Piamonte — Tienda Artesanal
 
